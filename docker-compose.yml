@@ -1,0 +1,10 @@
+services:
+  app:
+    build: . # Constroi a imagem a partir do Dockerfile na raiz do projeto.
+    container_name: FastAPI-Imersao-DevOps
+    ports:
+      - "8000:8000" # Mapeia a porta 8000 do host para a 8000 do contêiner
+    volumes:
+      - .:/app # Monta o diretório atual para live-reload durante o desenvolvimento
+    restart: unless-stopped
+
